@@ -1,4 +1,5 @@
 require Rails.root.join("lib/devise-two-factor/strategies/otp_attempt_authenticatable.rb")
+require Rails.root.join("lib/devise-two-factor/strategies/recovery_code_authenticatable.rb")
 # frozen_string_literal: true
 
 # Assuming you have not yet modified this file, each configuration option below

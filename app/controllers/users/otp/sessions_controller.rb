@@ -1,5 +1,7 @@
 class Users::Otp::SessionsController < DeviseController
   prepend_before_action :require_no_authentication, only: [:new, :create]
+  include OtpSessionExpirable
+  before_action :expire_otp_session!
 
   def new
     unless User.exists?(session[:otp_user_id])
