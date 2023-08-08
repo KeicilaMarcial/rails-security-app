@@ -4,10 +4,9 @@ class User < ApplicationRecord
            :otp_secret_encryption_key => ENV['DEVISE_OTP_ENCRYPT_KEY']
 
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :registerable,
+  devise :lockable,:registerable,
          :recoverable, :rememberable, :validatable
+
 
   devise :two_factor_backupable,
     otp_backup_code_length: 8,
