@@ -1,7 +1,6 @@
-# frozen_string_literal: true
-
 class Users::SessionsController < Devise::SessionsController
-    # POST /resource/sign_in
+    prepend_before_action :check_captcha, only: [:create]
+
     def create
         self.resource = warden.authenticate!(:database_authenticatable, auth_options)
 
@@ -16,5 +15,16 @@ class Users::SessionsController < Devise::SessionsController
         sign_in(resource_name, resource)
         respond_with resource, location: after_sign_in_path_for(resource)
         end
+    end
+
+   private
+
+   def check_captcha
+      alert_recaptcha unless verify_recaptcha
+    end
+
+    def alert_recaptcha
+      self.resource = resource_class.new sign_in_params
+      respond_with_navigational(resource) { render :new }
     end
 end
