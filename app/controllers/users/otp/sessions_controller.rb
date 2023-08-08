@@ -1,13 +1,13 @@
 class Users::Otp::SessionsController < DeviseController
-  prepend_before_action :require_no_authentication, only: [:new, :create]
+  prepend_before_action :require_no_authentication, only: %i[new create]
   include OtpSessionExpirable
   before_action :expire_otp_session!
 
   def new
-    unless User.exists?(session[:otp_user_id])
-      session[:otp_user_id] = nil
-      redirect_to new_user_session_path
-    end
+    return if User.exists?(session[:otp_user_id])
+
+    session[:otp_user_id] = nil
+    redirect_to new_user_session_path
   end
 
   def create
@@ -23,5 +23,4 @@ class Users::Otp::SessionsController < DeviseController
     sign_in(resource_name, resource)
     respond_with resource, location: after_sign_in_path_for(resource)
   end
-
 end

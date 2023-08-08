@@ -1,5 +1,5 @@
-require Rails.root.join("lib/devise-two-factor/strategies/otp_attempt_authenticatable.rb")
-require Rails.root.join("lib/devise-two-factor/strategies/recovery_code_authenticatable.rb")
+require Rails.root.join('lib/devise-two-factor/strategies/otp_attempt_authenticatable.rb')
+require Rails.root.join('lib/devise-two-factor/strategies/recovery_code_authenticatable.rb')
 # frozen_string_literal: true
 
 # Assuming you have not yet modified this file, each configuration option below
@@ -12,7 +12,7 @@ require Rails.root.join("lib/devise-two-factor/strategies/recovery_code_authenti
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   config.warden do |manager|
-    manager.default_strategies(:scope => :user).unshift :two_factor_authenticatable
+    manager.default_strategies(scope: :user).unshift :two_factor_authenticatable
   end
 
   # The secret key used by Devise. Devise uses this key to generate
