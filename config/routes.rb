@@ -6,8 +6,9 @@ Rails.application.routes.draw do
         post '/users/sign_in/recovery_code' => 'users/recovery_code/sessions#create'
     end
     devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        sessions: 'users/sessions', registrations: "users/registrations",
     }
+
   root "home#show"
   resource :dashboard, controller: :dashboard
 

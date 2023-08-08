@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TwoFactorAuthRails6</title>
+    <title>Rails Web App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,10 +13,13 @@
   <body>
     <header>
       <h1>
-        <%= link_to '2FA Demo', root_path %>
+        <%= link_to 'Rails Web App', root_path %>
       </h1>
 
       <nav>
+        <a class="nav-link" href='/dashboard'>Home</span></a>
+          <%= link_to "Password", edit_user_registration_path %>
+        <%= link_to "MFA", two_factor_authentication_path %>
         <% if user_signed_in? %>
           <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
         <% else %>
