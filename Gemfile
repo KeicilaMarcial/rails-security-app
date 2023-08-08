@@ -60,3 +60,7 @@ gem 'devise', '~> 4.8'
 gem 'devise-two-factor', '~> 4.0'
 gem 'dotenv-rails'
 gem 'rqrcode', '~> 2.1'
+
+#recaptch
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
+gem "recaptcha", require: "recaptcha/rails"
