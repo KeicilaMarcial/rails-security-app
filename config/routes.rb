@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_in/otp' => 'users/otp/sessions#new'

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   validate :password_regex
   devise :two_factor_authenticatable,
          otp_secret_encryption_key: ENV['DEVISE_OTP_ENCRYPT_KEY']
 
-  devise :lockable, :registerable,
+  devise :lockable, :timeoutable, :registerable,
          :recoverable, :rememberable, :validatable
 
   devise :two_factor_backupable,

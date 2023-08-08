@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Recaptcha.configure do |config|
   Recaptcha.configuration.skip_verify_env.delete('test')
 

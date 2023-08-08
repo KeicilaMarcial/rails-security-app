@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -59,8 +61,8 @@ gem 'stimulus-rails', '~> 1.0'
 # 2FA auth
 gem 'devise', '~> 4.8'
 gem 'devise-two-factor', '~> 4.0'
-gem 'dotenv-rails'
 gem 'rqrcode', '~> 2.1'
+gem 'devise_security_extension'
 
 # recaptch
 gem 'dotenv-rails', require: 'dotenv/rails-now'
