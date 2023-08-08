@@ -18,6 +18,11 @@
     </div>
   <% end %>
 
+    <div class="field">
+        <%= flash[:recaptcha_error] %>
+        <%= recaptcha_tags %>
+    </div>
+
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
