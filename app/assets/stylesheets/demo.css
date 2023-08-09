@@ -14,12 +14,12 @@
     --line-height: 1.618;
 
     /* Default (light) theme */
-    --bg: #212121;
-    --accent-bg: #2B2B2B;
-    --text: #DCDCDC;
+    --bg: #FFFFFF;
+    --accent-bg: #41427B;
+    --text: #FFFFFF;
     --text-light: #ABABAB;
     --border: #666;
-    --accent: #FFB300;
+    --accent: #56BAAE;
     --accent-light: #FFECB3;
     --code: #F06292;
     --preformatted: #CCC;
@@ -76,9 +76,14 @@
     margin: 0;
   }
 
+  label {
+    cursor: default;
+    color: #202020;
+  }
   /* Fix line height when title wraps */
   h1, h2, h3 {
     line-height: 1.1;
+    color: #202020;
   }
 
   /* Format navigation */
@@ -133,12 +138,11 @@
   }
 
   footer {
-    margin-top: 4rem;
+    margin-top: 20rem;
     padding: 2rem 1rem 1.5rem 1rem;
-    color: var(--text-light);
     font-size: .9rem;
     text-align: center;
-    border-top: 1px solid var(--border);
+
   }
 
   /* Format headers */
@@ -176,6 +180,7 @@
   a,
   a:visited {
     color: var(--accent);
+    color: #202020;
   }
 
   a:hover {
@@ -316,7 +321,7 @@
     font-family: inherit;
     padding: .5rem;
     margin-bottom: .5rem;
-    color: var(--text);
+    color: #202020;
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 5px;
