@@ -21,8 +21,6 @@ Devise.setup do |config|
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
-  # by default. You can change it below and use your own secret key.
-  # config.secret_key = '47b432337bceb629d68789d933fb88a8ceecfcfde5b3dda9781710fea54018733804bc1feed110fd7ab3c35bc5632ceb0833aa76267325586fa3c58d7ef2a9da'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -98,7 +96,7 @@ Devise.setup do |config|
   # It will change confirmation, password recovery and other workflows
   # to behave the same regardless if the e-mail provided was right or wrong.
   # Does not affect registerable.
-  # config.paranoid = true
+  config.paranoid = true
 
   # By default Devise will store the user in session. You can skip storage for
   # particular strategies by setting this option.
@@ -132,9 +130,6 @@ Devise.setup do |config|
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 12
-
-  # Set up a pepper to generate the hashed password.
-  # config.pepper = 'a64dce592861e8221298324e83e2197f59d9047a0cd579ac18d515381ab634ee407107ce67b2d94677395103c952c3801e36f051c33a09ad70d7bfd477c04af3'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
