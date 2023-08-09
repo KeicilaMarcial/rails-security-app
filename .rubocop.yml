@@ -1,0 +1,32 @@
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 1000
+
+Metrics/BlockLength:
+  Exclude:
+    - db/schema.rb
+    - 'config/routes.rb'
+  Max: 50
+
+Metrics/ClassLength:
+  Max: 250
+
+Metrics/PerceivedComplexity:
+  Exclude:
+   - 'bin/bundle'
+  Enabled: true
+
+Metrics/AbcSize:
+  Max: 30
+
+Layout/LineLength:
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/bundle'
+  Max: 120
+
+Metrics/CyclomaticComplexity:
+   Exclude:
+    - 'bin/bundle'
