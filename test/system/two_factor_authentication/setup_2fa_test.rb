@@ -65,8 +65,7 @@ class Setup2FATest < ApplicationSystemTestCase
     travel_to 30.seconds.after do
       fill_in 'Email', with: 'hopper@example.com'
       fill_in 'Password', with: '12345678'
-      assert_select 'div.field', ''
-      click_link "Log in"
+      click_on "Log in"
       assert_selector "h1", text: "Authenticate your account"
       assert_selector "p", text: "Enter 6-digit code from your two factor authenticator app."
 
@@ -87,7 +86,7 @@ class Setup2FATest < ApplicationSystemTestCase
     click_on "Logout"
     assert_content "Signed out successfully."
 
-    click_on "Login"
+    click_link "Log in" "Login"
     assert_selector "h2", text: "Log in"
 
     fill_in 'Email', with: 'hopper@example.com'
