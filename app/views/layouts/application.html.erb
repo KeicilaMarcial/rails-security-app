@@ -17,27 +17,22 @@
       </h1>
 
       <nav>
-        <a class="nav-link" href='/dashboard'>Home</span></a>
-          <%= link_to "Password", edit_user_registration_path %>
-        <%= link_to "MFA", two_factor_authentication_path %>
         <% if user_signed_in? %>
-          <%= button_to 'Logout', destroy_user_session_path, method: :delete,   data: { confirm: 'Are you sure you want to logout?' } %>
+           <%= link_to "Home", '/dashboard'%>
+            <%= link_to "Password", edit_user_registration_path%>
+            <%= link_to "MFA", two_factor_authentication_path%>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete , form: { data: { turbo_confirm: 'Are you sure?' } }  %>
         <% else %>
-          <%= link_to 'Login', new_user_session_path %>
+            <%= link_to 'Login', new_user_session_path %>
         <% end %>
       </nav>
     </header>
 
-    <section>
-      <% flash.each do |name, msg| -%>
-        <%= content_tag :dialog, msg, role: name %>
-      <% end %>
-    </section>
 
     <%= yield %>
 
     <footer>
-      <a href="https://rubygems.guide">RubyGems.Guide</a> - 2FA Demo
+
     </footer>
   </body>
 </html>
