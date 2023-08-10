@@ -76,6 +76,17 @@
     margin: 0;
   }
 
+  p {
+    color: #202020;
+  }
+
+  li {
+    color: #202020;
+  }
+
+  i {
+    color: #202020;
+  }
   label {
     cursor: default;
     color: #202020;
