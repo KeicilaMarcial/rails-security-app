@@ -1,4 +1,4 @@
-<h1>Authenticate your account</h1>
+<h1>Autentique sua conta</h1>
 
 <%= form_with(
       url: users_sign_in_otp_path,
@@ -6,15 +6,15 @@
       method: :post,
       local: true
 ) do |f| %>
-  <p>Enter 6-digit code from your two factor authenticator app.</p>
+  <p>Digite o código de 6 dígitos do seu aplicativo autenticador de dois fatores</p>
 
   <%= render 'components/otp_field', f: f, field_name: :otp_attempt, code_length: 6 %>
 
 
   <div>
-    <p>Don't have your phone?</p>
-    <%= link_to "Use a recovery code to access your account.", users_sign_in_recovery_code_path %>
+    <p>Não tem seu telefone?</p>
+    <%= link_to "Use um código de recuperação para acessar sua conta.", users_sign_in_recovery_code_path %>
   </div>
 
-  <%= f.submit 'Verify' %>
+  <%= f.submit 'Verificar' %>
 <% end %>

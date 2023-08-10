@@ -19,7 +19,7 @@ class User < ApplicationRecord
   serialize :otp_backup_codes, Array
 
   def otp_qrcode
-    provision_uri = otp_provisioning_uri(email, issuer: '2FA-Demo')
+    provision_uri = otp_provisioning_uri(email, issuer: '2FA')
     RQRCode::QRCode.new(provision_uri)
   end
 
@@ -29,7 +29,7 @@ class User < ApplicationRecord
     return if password.blank? || password =~ /\A(?=.*\d)(?=.*[A-Z])(?=.*\W)[^ ]{7,}\z/
 
     errors.add :password,
-               'Password should have at least 1 uppercase and lowercase letter, 1 number and 1 special character'
+               'A senha deve ter pelo menos uma letra maiúscula, uma minúscula, um número e um caractere especial'
   end
 
   def store_digest

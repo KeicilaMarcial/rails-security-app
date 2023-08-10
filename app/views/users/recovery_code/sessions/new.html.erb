@@ -1,4 +1,4 @@
-<h1>Authenticate your account with a recovery code</h1>
+<h1>Autentique sua conta com um código de recuperação</h1>
 
 <%= form_with(
       url: users_sign_in_recovery_code_path,
@@ -10,5 +10,5 @@
 
   <%= render 'components/otp_field', f: f, field_name: :recovery_code, code_length: 8 %>
 
-  <%= f.submit 'Verify' %>
+  <%= f.submit 'Verificar' %>
 <% end %>

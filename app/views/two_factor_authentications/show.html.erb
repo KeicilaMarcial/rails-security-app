@@ -1,14 +1,14 @@
-<h1>Two-factor authentication</h1>
+<h1>Autenticação de dois fatores</h1>
 
-<h2>Authenticator app</h2>
+<h2>aplicativo autenticador</h2>
 
  <% if current_user.otp_required_for_login %>
-   <%= button_to "Disable", two_factor_authentication_path, method: :delete %>
+   <%= button_to "Desativar", two_factor_authentication_path, method: :delete %>
  <% else %>
-   <%= button_to 'Enable', two_factor_authentication_path, method: :post %>
+   <%= button_to 'Habilitar', two_factor_authentication_path, method: :post %>
  <% end %>
 
 <% if current_user.otp_required_for_login %>
-    <h2>Recovery codes</h2>
-    <%= button_to "Regenerate", two_factor_authentication_recovery_codes_path, method: :post %>
+    <h2>códigos de recuperação</h2>
+    <%= button_to "Regerar", two_factor_authentication_recovery_codes_path, method: :post %>
 <% end %>

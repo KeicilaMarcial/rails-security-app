@@ -1,5 +1,5 @@
-<h1>Setup Two-Factor Authentication</h1>
-<p>Use your two-factor authentication app to scan the QR code</p>
+<h1>Configurar autenticação de dois fatores</h1>
+<p>Use seu aplicativo de autenticação de dois fatores para escanear o código QR</p>
 
 <%= @qrcode.as_svg(module_size: 3, fill: "ffffff").html_safe %>
 
@@ -8,13 +8,13 @@
       local: true,
       method: :post
 ) do |f| %>
-  <p>Enter 6-digit code from your two factor authenticator app.</p>
+  <p>Digite o código de 6 dígitos do seu aplicativo autenticador de dois fatores.</p>
 
   <%= render 'components/otp_field', f: f, field_name: :otp_code, code_length: 6 %>
 
   <div>
-    <%= f.button "Confirm and activate", type: :submit %>
+    <%= f.button "Confirme e ative", type: :submit %>
 
-    <%= link_to 'Cancel', two_factor_authentication_path %>
+    <%= link_to 'Cancelar', two_factor_authentication_path %>
   </div>
 <% end %>
