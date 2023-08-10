@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   include ActiveModel::Validations
 
   has_many :password_histories
   after_save :store_digest
-  validates :password, :unique_password => true
+  validates :password, unique_password: true
   validate :password_regex
 
   devise :two_factor_authenticatable,
@@ -33,8 +35,8 @@ class User < ApplicationRecord
   end
 
   def store_digest
-   if encrypted_password_changed?
-      PasswordHistory.create(:user => self, :encrypted_password => encrypted_password)
-    end
+    return unless encrypted_password_changed?
+
+    PasswordHistory.create(user: self, encrypted_password: encrypted_password)
   end
 end

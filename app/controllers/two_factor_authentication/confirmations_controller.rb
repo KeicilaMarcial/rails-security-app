@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TwoFactorAuthentication
   class ConfirmationsController < ApplicationController
     def show
@@ -13,7 +15,7 @@ module TwoFactorAuthentication
         render 'two_factor_authentication/confirmations/success'
       else
         flash.now[:alert] = 'Falha ao confirmar o código 2FA'
-        render  'two_factor_authentications/show'
+        render 'two_factor_authentications/show'
       end
     end
   end
